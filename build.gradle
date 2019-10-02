@@ -96,11 +96,11 @@ sourceSets {
 
 // Dependencies for renamed ASM
 dependencies {
-    asm 'org.ow2.asm:asm:7.1'
-    asm 'org.ow2.asm:asm-analysis:7.1'
-    asm 'org.ow2.asm:asm-commons:7.1'
-    asm 'org.ow2.asm:asm-tree:7.1'
-    asm 'org.ow2.asm:asm-util:7.1'
+    asm 'org.ow2.asm:asm:7.2'
+    asm 'org.ow2.asm:asm-analysis:7.2'
+    asm 'org.ow2.asm:asm-commons:7.2'
+    asm 'org.ow2.asm:asm-tree:7.2'
+    asm 'org.ow2.asm:asm-util:7.2'
     jarjar 'com.googlecode.jarjar:jarjar:1.1'
 }
 
@@ -144,21 +144,21 @@ task renamedASM {
         }
     }
     
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm:7.1')
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-analysis:7.1')
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-commons:7.1')
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-tree:7.1')
-    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-util:7.1')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm:7.1')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-analysis:7.1')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-commons:7.1')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-tree:7.1')
-    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-util:7.1')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm:7.1')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-analysis:7.1')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-commons:7.1')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-tree:7.1')
-    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-util:7.1')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm:7.2')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-analysis:7.2')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-commons:7.2')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-tree:7.2')
+    project.dependencies.add('compile', 'org.spongepowered:mixin-asm-util:7.2')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm:7.2')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-analysis:7.2')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-commons:7.2')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-tree:7.2')
+    project.dependencies.add('apCompile', 'org.spongepowered:mixin-asm-util:7.2')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm:7.2')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-analysis:7.2')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-commons:7.2')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-tree:7.2')
+    project.dependencies.add('agentCompile', 'org.spongepowered:mixin-asm-util:7.2')
 }
 compileJava.dependsOn(renamedASM)
 eclipseClasspath.dependsOn(renamedASM)
@@ -203,7 +203,7 @@ dependencies {
     
     // asm bridge
     bridgeCompile log4j2
-    bridgeCompile 'org.ow2.asm:asm-commons:7.1'
+    bridgeCompile 'org.ow2.asm:asm-commons:7.2'
 }
 
 // Eclipse

@@ -631,14 +631,19 @@ public final class MixinEnvironment implements ITokenProvider {
         /**
          * Java 14 and above
          */
-        JAVA_14(14, CompatibilityLevel.CLASS_V14, true) {
-            @Override
-            boolean isSupported() {
-                return false;
-            }
-        };
+        JAVA_14(14, Opcodes.V14, true),
 
-        private static final int CLASS_V14 = 58;
+	    /**
+	     * Java 15 and above
+	     */
+	    JAVA_15(15, CompatibilityLevel.CLASS_V15, true) {
+		    @Override
+		    boolean isSupported() {
+			    return false;
+		    }
+	    };
+
+	    private static final int CLASS_V15 = 59;
 
         private final int ver;
         
