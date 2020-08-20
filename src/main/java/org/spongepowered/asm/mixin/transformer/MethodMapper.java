@@ -109,7 +109,13 @@ public class MethodMapper {
         String prefix = InjectionInfo.getInjectorPrefix(method.getInjectorAnnotation());
         String classUID = MethodMapper.getClassUID(method.getOwner().getClassRef());
         String methodUID = MethodMapper.getMethodUID(method.name, method.desc, !method.isSurrogate());
-        return String.format("%s$%s%s$%s", prefix, classUID, methodUID, method.name);
+        StringBuilder mixinConfigName = new StringBuilder();
+        for (char c : method.getOwner().getConfig().getName().toCharArray()) {
+            if (Character.isJavaIdentifierPart(c))
+                mixinConfigName.append(c);
+            else mixinConfigName.append('_');
+        }
+        return String.format("%s$%s$%s%s$%s", prefix, mixinConfigName.toString(), classUID, methodUID, method.name);
     }
 
     /**
