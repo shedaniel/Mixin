@@ -109,7 +109,8 @@ public class MethodMapper {
         String prefix = InjectionInfo.getInjectorPrefix(method.getInjectorAnnotation());
         String classUID = MethodMapper.getClassUID(method.getOwner().getClassRef());
         String methodUID = MethodMapper.getMethodUID(method.name, method.desc, !method.isSurrogate());
-        return String.format("%s$%s%s$%s", prefix, classUID, methodUID, method.name);
+        String configName = method.getOwner().getConfig().getName().replace('.', '_');
+        return String.format("%s$%s$%s$%s%s", prefix, configName, method.name, classUID, methodUID);
     }
 
     /**
