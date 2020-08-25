@@ -24,6 +24,11 @@
  */
 package org.spongepowered.asm.mixin;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.launch.GlobalProperties;
@@ -31,11 +36,6 @@ import org.spongepowered.asm.launch.GlobalProperties.Keys;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import org.spongepowered.asm.mixin.transformer.ClassInfo;
 import org.spongepowered.asm.mixin.transformer.Config;
-
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * Entry point for registering global mixin resources. Compatibility with
@@ -84,7 +84,7 @@ public final class Mixins {
     public static void addConfigurations(String modId, String... configFiles) {
         MixinEnvironment fallback = MixinEnvironment.getDefaultEnvironment();
         for (String configFile : configFiles) {
-            Mixins.createConfiguration(configFile, modId,fallback);
+            Mixins.createConfiguration(configFile, modId, fallback);
         }
     }
     
