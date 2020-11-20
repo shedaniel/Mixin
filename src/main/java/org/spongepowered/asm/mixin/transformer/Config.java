@@ -150,6 +150,7 @@ public class Config {
      * @param modId id of the provider mod or null
      * @param outer failover environment
      * @return new config or null if invalid config version
+     * @deprecated only available on fabric's fork of mixin
      */
     @Deprecated
     public static Config create(String configFile, String modId, MixinEnvironment outer) {

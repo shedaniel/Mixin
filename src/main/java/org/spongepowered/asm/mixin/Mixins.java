@@ -80,7 +80,9 @@ public final class Mixins {
      * 
      * @param modId id of the provider mod or null
      * @param configFiles config resources to add
+     * @deprecated only available on fabric's fork of mixin
      */
+    @Deprecated
     public static void addConfigurations(String modId, String... configFiles) {
         MixinEnvironment fallback = MixinEnvironment.getDefaultEnvironment();
         for (String configFile : configFiles) {
