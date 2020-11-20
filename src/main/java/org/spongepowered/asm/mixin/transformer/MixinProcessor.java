@@ -520,9 +520,11 @@ public class MixinProcessor {
                 this.handleMixinPrepareError(config, ex, environment);
             } catch (Exception ex) {
                 String message = ex.getMessage();
-                if (config.getModId() != null)
+                if (config.getModId() != null) {
                     MixinProcessor.logger.error("Error encountered whilst initialising mixin config '" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
-                MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "': " + message, ex);
+                } else {
+                    MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "': " + message, ex);
+                }
             }
         }
         
@@ -549,9 +551,11 @@ public class MixinProcessor {
                 this.handleMixinPrepareError(config, ex, environment);
             } catch (Exception ex) {
                 String message = ex.getMessage();
-                if (config.getModId() != null)
+                if (config.getModId() != null) {
                     MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
-                MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName()  + "': " + message, ex);
+                } else {
+                    MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName()  + "': " + message, ex);
+                }
             }
         }
         
