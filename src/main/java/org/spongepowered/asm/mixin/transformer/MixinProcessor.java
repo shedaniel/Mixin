@@ -133,9 +133,7 @@ public class MixinProcessor {
         }
 
         public String getErrorMessage(IMixinInfo mixin, IMixinConfig config, Phase phase) {
-            if (config.getModId() != null)
-                return String.format("Mixin [%s] from phase [%s] in config [%s] provided by [%s] FAILED during %s", mixin, phase, config, config.getModId(), this.name());
-            return String.format("Mixin [%s] from phase [%s] in config [%s] FAILED during %s", mixin, phase, config, this.name());
+            return String.format("Mixin [%s] from phase [%s] in config [%s] provided by [%s] FAILED during %s", mixin, phase, config, config.getModId(), this.name());
         }
         
     }
@@ -520,11 +518,7 @@ public class MixinProcessor {
                 this.handleMixinPrepareError(config, ex, environment);
             } catch (Exception ex) {
                 String message = ex.getMessage();
-                if (config.getModId() != null) {
-                    MixinProcessor.logger.error("Error encountered whilst initialising mixin config '" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
-                } else {
-                    MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "': " + message, ex);
-                }
+                MixinProcessor.logger.error("Error encountered whilst initialising mixin config '" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
             }
         }
         
@@ -551,11 +545,7 @@ public class MixinProcessor {
                 this.handleMixinPrepareError(config, ex, environment);
             } catch (Exception ex) {
                 String message = ex.getMessage();
-                if (config.getModId() != null) {
-                    MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
-                } else {
-                    MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName()  + "': " + message, ex);
-                }
+                MixinProcessor.logger.error("Error encountered during mixin config postInit step'" + config.getName() + "', provided by '" + config.getModId() + "': " + message, ex);
             }
         }
         
