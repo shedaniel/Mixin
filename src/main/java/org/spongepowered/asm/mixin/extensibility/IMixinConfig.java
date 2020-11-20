@@ -92,7 +92,7 @@ public interface IMixinConfig {
     /**
      * Get the id of the provider mod, if available
      *
-     * @return the id of the provider mod or null if no plugin
+     * @return the id of the provider mod or null if it wasn't provided
      */
     public abstract String getModId();
 

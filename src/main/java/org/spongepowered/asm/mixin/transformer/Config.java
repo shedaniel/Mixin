@@ -202,15 +202,4 @@ public class Config {
         return MixinConfig.create(configFile, MixinEnvironment.getDefaultEnvironment());
     }
 
-    /**
-     * Factory method, create a config from the specified config resource
-     * 
-     * @param configFile config resource
-     * @param modId id of the provider mod or null
-     * @return new config or null if invalid config version 
-     */
-    public static Config create(String configFile, String modId) {
-        return MixinConfig.create(configFile, modId, MixinEnvironment.getDefaultEnvironment());
-    }
-
 }

@@ -96,16 +96,6 @@ public final class Mixins {
     public static void addConfiguration(String configFile) {
         Mixins.createConfiguration(configFile, null, MixinEnvironment.getDefaultEnvironment());
     }
-
-    /**
-     * Add a mixin configuration resource
-     *
-     * @param configFile path to configuration resource
-     * @param modId id of the provider mod or null
-     */
-    public static void addConfiguration(String configFile, String modId) {
-        Mixins.createConfiguration(configFile, modId, MixinEnvironment.getDefaultEnvironment());
-    }
     
     @Deprecated
     static void addConfiguration(String configFile, MixinEnvironment fallback) {
