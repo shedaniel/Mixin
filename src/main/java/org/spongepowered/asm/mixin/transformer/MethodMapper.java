@@ -110,10 +110,8 @@ public class MethodMapper {
         String classUID = MethodMapper.getClassUID(method.getOwner().getClassRef());
         String methodUID = MethodMapper.getMethodUID(method.name, method.desc, !method.isSurrogate());
         StringBuilder mixinConfigName = new StringBuilder();
-        for (char c : method.getOwner().getConfig().getName().toCharArray()) {
-            if (Character.isJavaIdentifierPart(c))
-                mixinConfigName.append(c);
-            else mixinConfigName.append('_');
+        for (char c : Strings.nullToEmpty(method.getOwner().getConfig().getName()).toCharArray()) {
+            mixinConfigName.append(Character.isJavaIdentifierPart(c) ? c : '_');
         }
         return String.format("%s$%s$%s%s$%s", prefix, mixinConfigName.toString(), classUID, methodUID, method.name);
     }
